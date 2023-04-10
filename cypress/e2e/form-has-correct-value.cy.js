@@ -16,7 +16,7 @@ describe('when data is put into the form, the value is reflected in that form in
     cy.get(':nth-child(3) > select').should('have.value', 'Rail');
     
     cy.get('#tutorial').type('https://www.linkedin.com');
-    cy.get('#name').should('have.value', 'https://www.linkedin.com');
+    cy.get('#tutorial').should('have.value', 'https://www.linkedin.com');
 
   });
 
