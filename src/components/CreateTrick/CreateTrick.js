@@ -7,17 +7,17 @@ function CreateTrick({}) {
         <form>
             <label> 
                 <select>
-                <option value='Choose your Stance'>Choose your Stance</option>
+                <option disabled value='Choose your Stance'>Choose your Stance</option>
                     <option value='Regular'>Regular</option>
                     <option value='Switch'>Switch</option>
                 </select>
             </label>
-            <label for='name'> 
+            <label htmlFor='name'> 
                 <input id='name' placeholder='Name of Trick' required></input>
             </label>
             <label>
                 <select>
-                    <option value='Choose your Obstacle'>Choose your Obstacle</option>
+                    <option disabled value='Choose your Obstacle'>Choose your Obstacle</option>
                     <option value='Flatground'>Flatground</option>
                     <option value='Ledge'>Ledge</option>
                     <option value='Rail'>Rail</option>
@@ -25,9 +25,10 @@ function CreateTrick({}) {
                     <option value='Pool'>Pool</option>
                 </select>
             </label>
-            <label for='link'> 
+            <label htmlFor='link'> 
                 <input id='link' placeholder='Link to Tutorial' required></input>
             </label>
+            <button type='submit'>Send it!</button>
         </form>
     )
 
