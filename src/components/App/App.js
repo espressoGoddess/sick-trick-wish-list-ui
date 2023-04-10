@@ -10,11 +10,12 @@ function App() {
     submitTrick(newTrick);
   }
 
-  useEffect(() => {
+  const updateTricks = () => {
     fetch('http://localhost:3001/api/v1/tricks')
       .then(response => response.json())
-      .then(data => setTricks(data))
-  }, []);
+      .then(data => setTricks(data));
+  }
+  useEffect(updateTricks, []);
 
   const submitTrick = (trick) => {
     fetch('http://localhost:3001/api/v1/tricks', {
@@ -27,13 +28,7 @@ function App() {
         tutorial: trick.tutorial
       })
     })
-      .then(response => {
-        if (response.ok) {
-          setTricks([...tricks, trick])
-        } else 
-        return;
-      })
-
+      .then(updateTricks);
   }
 
   const createTricks = () => {
