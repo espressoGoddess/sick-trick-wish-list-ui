@@ -21,6 +21,7 @@ h1 {
 
 .tricks {
   display: flex;
+  flex-wrap: wrap;
 }
 
 a {

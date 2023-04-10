@@ -6,6 +6,10 @@ import CreateTrick from '../CreateTrick/CreateTrick';
 function App() {
   const [tricks, setTricks] = useState([]);
 
+  const submitTrick = (newTrick) => {
+    setTricks([...tricks, newTrick]);
+  }
+
   useEffect(() => {
     fetch('http://localhost:3001/api/v1/tricks')
       .then(response => response.json())
@@ -26,7 +30,7 @@ function App() {
     
       <main className="App">
         <h1>Sick Trick Wish List</h1>
-        <CreateTrick />
+        <CreateTrick submitTrick={submitTrick}/>
         <section className='tricks'>
           {createTricks()}
         </section>
