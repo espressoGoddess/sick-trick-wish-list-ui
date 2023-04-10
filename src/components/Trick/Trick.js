@@ -7,7 +7,7 @@ const Trick = ({stance, name, obstacle, tutorial}) => {
         <h2>{stance + ' ' + name}</h2>
         <p>Obstacle: {obstacle}</p>
         <p>Link to Tutorial:</p>
-        <p>{tutorial}</p>
+        <a href={tutorial} >{tutorial}</a>
     </article>
     )
 }
