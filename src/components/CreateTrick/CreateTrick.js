@@ -1,22 +1,29 @@
 import './CreateTrick.css';
-import React from 'react';
+import React, { useState } from 'react';
 
 
-function CreateTrick({}) {
+function CreateTrick() {
+    const [stance, setStance] = useState('Choose your Stance');
+    const [name, setName] = useState('');
+    const [obstacle, setObstacle] = useState('Choose your Obstacle');
+    const [link, setLink] = useState('');
+
+
+
     return (
-        <form>
+        <form >
             <label> 
-                <select>
+                <select value={stance} onChange={e => setStance(e.target.value)}>
                 <option disabled value='Choose your Stance'>Choose your Stance</option>
                     <option value='Regular'>Regular</option>
                     <option value='Switch'>Switch</option>
                 </select>
             </label>
             <label htmlFor='name'> 
-                <input id='name' placeholder='Name of Trick' required></input>
+                <input type='text' id='name' placeholder='Name of Trick' value={name} onChange={e => setName(e.target.value)} required></input>
             </label>
             <label>
-                <select>
+                <select value={obstacle} onChange={e => setObstacle(e.target.value)}>
                     <option disabled value='Choose your Obstacle'>Choose your Obstacle</option>
                     <option value='Flatground'>Flatground</option>
                     <option value='Ledge'>Ledge</option>
@@ -26,7 +33,7 @@ function CreateTrick({}) {
                 </select>
             </label>
             <label htmlFor='link'> 
-                <input id='link' placeholder='Link to Tutorial' required></input>
+                <input tpye='url' id='link' placeholder='Link to Tutorial' value={link} onChange={e => setLink(e.target.value)} required></input>
             </label>
             <button type='submit'>Send it!</button>
         </form>
