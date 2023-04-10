@@ -4,7 +4,11 @@ describe('tricks and form should be displayed when visiting home page', () => {
     cy.visit('http://localhost:3000/')
   });
 
-  it('passes', () => {
-
-  })
+  it('should have form on page', () => {
+    cy.get('form').children().should('have.length', 5)
+    .get(':nth-child(1) > select');
+    cy.get('#name');
+    cy.get(':nth-child(3) > select')
+    cy.get('#tutorial');
+  });
 })

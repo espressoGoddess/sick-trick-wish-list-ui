@@ -1,23 +1,23 @@
 [
-    {
-      "stance": "regular",
-      "name": "yikes",
-      "obstacle": "desk corner",
-      "tutorial": "https://www.javascriptforcats.com",
-      "id": 1
-    },
-    {
-      "stance": "switch",
-      "name": "heely",
-      "obstacle": "slide",
-      "tutorial": "https://www.javascriptforcats.com",
-      "id": 2
-    },
-    {
-      "stance": "regular",
-      "name": "backside beep boop",
-      "obstacle": "water fountain",
-      "tutorial": "https://www.javascriptforcats.com",
-      "id": 3
-    }
-  ]  
+  {
+    "stance": "regular",
+    "name": "yikes",
+    "obstacle": "desk corner",
+    "tutorial": "https://www.javascriptforcats.com",
+    "id": 1
+  },
+  {
+    "stance": "switch",
+    "name": "heely",
+    "obstacle": "slide",
+    "tutorial": "https://www.javascriptforcats.com",
+    "id": 2
+  },
+  {
+    "stance": "regular",
+    "name": "backside beep boop",
+    "obstacle": "water fountain",
+    "tutorial": "https://www.javascriptforcats.com",
+    "id": 3
+  }
+]  
