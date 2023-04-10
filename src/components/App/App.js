@@ -11,11 +11,23 @@ function App() {
       .then(data => setTricks(data))
   }, []);
 
+  const createTricks = () => {
+    if (tricks.length) {
+      return tricks.map(trick => {
+        return <Trick key={trick.id} stance={trick.stance} name={trick.name} obstacle={trick.obstacle} tutorial={trick.tutorial}/>
+      })
+    }
+    else {
+      return null;
+    }
+  }
   return (
     
       <main className="App">
         <h1>Sick Trick Wish List</h1>
-        {trickCards}
+        <section className='tricks'>
+          {createTricks()}
+        </section>
       </main>
     );
 }
