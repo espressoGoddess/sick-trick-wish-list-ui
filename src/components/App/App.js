@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import fetchInfo from '../../apiCalls';
 import Trick from '../Trick/Trick';
 import './App.css';
 
@@ -12,13 +11,6 @@ function App() {
       .then(data => setTricks(data))
   }, []);
 
-  createTricks = () => {
-    if (tricks.length) {
-      const trickCards= tricks.map(trick => {
-        return <Trick />
-      })
-    }
-  }
   return (
     
       <main className="App">
