@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Trick from '../Trick/Trick';
 import './App.css';
+import CreateTrick from '../CreateTrick/CreateTrick';
 
 function App() {
   const [tricks, setTricks] = useState([]);
@@ -25,6 +26,7 @@ function App() {
     
       <main className="App">
         <h1>Sick Trick Wish List</h1>
+        <CreateTrick />
         <section className='tricks'>
           {createTricks()}
         </section>
