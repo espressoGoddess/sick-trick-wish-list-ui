@@ -10,6 +10,7 @@ describe('tricks and form should be displayed when visiting home page', () => {
     cy.get('#name');
     cy.get(':nth-child(3) > select')
     cy.get('#tutorial');
+    cy.get('button').contains('Send it!')
   });
 
   it('should have tricks on page', () => {
