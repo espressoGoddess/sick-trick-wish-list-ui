@@ -1,23 +1,27 @@
 import './CreateTrick.css';
 import React, { useState } from 'react';
 
-function CreateTrick({ createTrick }) {
+function CreateTrick({ createTrick, error }) {
   const [stance, setStance] = useState('Choose your Stance');
   const [name, setName] = useState('');
   const [obstacle, setObstacle] = useState('Choose your Obstacle');
   const [tutorial, setTutorial] = useState('');
 
   const clearForm = () => {
-    setStance('Choose your Stance');
-    setName('');
-    setObstacle('Choose your Obstacle');
-    setTutorial('');
-}
+    if (!error) {
+      setStance('Choose your Stance');
+      setName('');
+      setObstacle('Choose your Obstacle');
+      setTutorial('');
+    }
+  }
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
       createTrick({stance, name, obstacle, tutorial, id: Date.now()})
-      clearForm();
+      if (!error) {
+        clearForm();
+      }
       }}>
       <label> 
         <select value={stance} onChange={e => setStance(e.target.value)} required>

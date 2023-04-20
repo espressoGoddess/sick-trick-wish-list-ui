@@ -5,6 +5,7 @@ import CreateTrick from '../CreateTrick/CreateTrick';
 
 function App() {
   const [tricks, setTricks] = useState([]);
+  const [error, setError] = useState(null);
 
   const createTrick = (newTrick) => {
     submitTrick(newTrick);
@@ -28,7 +29,14 @@ function App() {
         tutorial: trick.tutorial
       })
     })
-      .then(updateTricks);
+      .then(response => {
+        if (response.ok) {
+          updateTricks();
+          setError(null);
+        } else {
+          throw new Error('errooooorrrr');
+        }
+      }).catch(setError(true));
   }
 
   const createTricks = () => {
@@ -45,7 +53,8 @@ function App() {
     
       <main className="App">
         <h1>Sick Trick Wish List</h1>
-        <CreateTrick createTrick={createTrick}/>
+        <CreateTrick createTrick={createTrick} error={error}/>
+        {error ? <p>OOps, try again</p> : null}
         <section className='tricks'>
           {createTricks()}
         </section>
